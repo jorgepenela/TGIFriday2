@@ -1,0 +1,15 @@
+Ejercicio para el Viernes de Agosto.
+
+feca.js tiene una sintaxis medio a la vieja arcaica.
+Veamos si podemos hacer los mismo utilizando class.
+
+Esto hasta donde puedan, si se quedan en la mitad.
+Por lo menos, van a ir viendo como se instancia una class.
+
+No se manden de entrada a hacer lo mismo. 
+Hagan primero ejercicios simples.
+
+Instanciar una class con new, llamar un metodo, pasarle parametros
+pasarle functions as data.
+
+

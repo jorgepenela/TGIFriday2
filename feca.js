@@ -1,13 +1,14 @@
 const uuid = require('uuid');
 const faker = require('Faker');
 const _ = require('underscore');
+const { timeStamp } = require('console');
 
 let generadorObjetosFalsos = {
     idx : 0,
     cantidad : 0,
     eventos: {
-        onObjetoFalsoGenerado: _.identity,
-        onRecorridaFinalizada: _.identity 
+        onObjetoFalsoGenerado: () => {}, // nunca null
+        onRecorridaFinalizada: _.identity
     },
     setEvtObjetoFalsoGenerado(fn) {
         this.eventos.onObjetoFalsoGenerado = fn;
@@ -17,8 +18,8 @@ let generadorObjetosFalsos = {
         this.eventos.onRecorridaFinalizada = fn;
         return this;
     },
-    setCantidad(cantidad) {
-        this.cantidad = cantidad;
+    setCantidad(x) {
+        this.cantidad = x;
         return this;
     },
     generarObjetosFalsos : function() {
@@ -34,7 +35,11 @@ let generadorObjetosFalsos = {
         this.generarObjetosFalsos();
     },  
     abortar : function() {
-
+        this.idx = this.cantidad;
+        this.continuar();
+    },
+    arrancar : function() {
+        this.continuar();
     },
     generarUnObjetoFalso : function() {
         return {
